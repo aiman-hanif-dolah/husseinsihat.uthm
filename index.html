@@ -1,141 +1,297 @@
 <!DOCTYPE html>
+
+<!-- 
+  To change the theme, change the class on the html tag below to one of:
+  - theme-auto: Automatically switches based on user's system preferences
+  - theme-light: Forces light theme
+  - theme-dark: Forces dark theme
+-->
+
 <html class="theme-auto" lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Hussein Sihat Links</title>
+  <!-- Page Title -->
+  <title>Hussein Sihat</title>
   <link rel="icon" type="image/x-icon" href="images/avatar.png" />
 
-  <meta name="description" content="Official Hussein Sihat Links and Info" />
-  <meta name="keywords" content="Hussein Sihat, Health Program, UTHM" />
-  <meta name="author" content="Hussein Sihat" />
+  <!-- Meta Description -->
+  <meta name="description" content="Official links and info for Hussein Sihat program" />
+
+  <!-- Keywords -->
+  <meta name="keywords" content="Hussein Sihat, UTHM, Health, Program, Social Media" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yourwebsite.com" />
+
+  <!-- Author -->
+  <meta name="author" content="Hussein Sihat Team" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/brands.css" />
 
   <style>
+    /* Blue themed background */
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      background: #fefefe;
-      color: #333;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #f0f4f8;
       margin: 0;
-      padding: 20px;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
+      min-height: 100vh;
     }
 
+    /* Container & column adjustments */
+    .container {
+      max-width: 480px;
+      margin: 2rem auto 4rem auto;
+      background: rgba(255 255 255 / 0.07);
+      border-radius: 16px;
+      padding: 2rem 1.5rem 3rem;
+      box-shadow: 0 0 20px rgb(25 56 119 / 0.6);
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Avatar */
     .avatar {
       width: 120px;
       height: 120px;
-      border-radius: 50%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 20px;
       object-fit: cover;
-      border: 3px solid #1976d2;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.25rem;
+      border: 4px solid #61dafb;
     }
 
-    h1 {
+    /* Header name */
+    h1 > div {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 0.2rem;
+      letter-spacing: 1.5px;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Bio/description */
+    p {
+      font-weight: 500;
+      font-size: 1.1rem;
+      color: #d0e6ff;
+      margin-bottom: 2rem;
       text-align: center;
-      margin-bottom: 30px;
-      font-weight: 700;
-      font-size: 1.9rem;
-      color: #1976d2;
+      letter-spacing: 0.1em;
     }
 
+    /* Collapsible style */
     .collapsible {
-      background-color: #1976d2;
+      background-color: #1a73e8;
       color: white;
       cursor: pointer;
-      padding: 14px 20px;
+      padding: 14px 18px;
       width: 100%;
       border: none;
+      border-radius: 12px;
       text-align: left;
-      outline: none;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      margin-bottom: 8px;
+      font-size: 1.15rem;
       font-weight: 600;
-      user-select: none;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 3px 8px rgb(26 115 232 / 0.6);
+      transition: background-color 0.3s ease;
     }
 
-    .collapsible::after {
-      content: '\25bc';
-      float: right;
-      margin-left: 10px;
+    .collapsible:hover {
+      background-color: #1669c1;
+    }
+
+    .collapsible:after {
+      content: "\25bc";
+      font-size: 1.2rem;
+      transform: rotate(0deg);
       transition: transform 0.3s ease;
+      margin-left: 8px;
     }
 
-    .collapsible.active::after {
+    .collapsible.active:after {
       transform: rotate(180deg);
     }
 
+    /* Collapsible content */
     .content {
-      padding: 0 20px 20px 20px;
-      display: none;
+      max-height: 0;
       overflow: hidden;
-      background-color: #f0f4f8;
-      border-radius: 0 0 8px 8px;
-      margin-bottom: 15px;
+      transition: max-height 0.35s ease;
+      background: rgba(255 255 255 / 0.08);
+      border-radius: 0 0 12px 12px;
+      margin-bottom: 16px;
+      padding: 0 16px;
     }
 
-    a.link-item {
+    /* Link buttons inside collapsible */
+    .button-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 14px;
+      padding-bottom: 14px;
+    }
+
+    /* Colored buttons per brand */
+    a.button {
       display: flex;
       align-items: center;
-      padding: 10px 0;
+      gap: 12px;
+      padding: 12px 20px;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 10px;
+      color: #fff;
       text-decoration: none;
-      color: #1976d2;
-      font-weight: 500;
-      border-bottom: 1px solid #d9e3f0;
-      transition: color 0.2s ease;
+      box-shadow: 0 3px 8px rgb(0 0 0 / 0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    a.link-item:hover {
-      color: #0d47a1;
+    a.button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 15px rgb(0 0 0 / 0.3);
     }
 
-    .link-preview {
-      margin-left: auto;
-      width: 80px;
-      height: 45px;
+    /* Brand colors and icons */
+    a.button-tiktok {
+      background: linear-gradient(45deg, #69C9D0, #EE1D52);
+    }
+
+    a.button-instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
+
+    a.button-googleform {
+      background: #4285f4;
+    }
+
+    a.button-linkpreview {
+      background: #6f42c1;
+      flex-direction: column;
+      padding: 14px 18px;
+    }
+
+    a.button-linkpreview img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 8px;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+
+    /* Carousel container */
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 12px;
+      padding: 8px 0;
+      scrollbar-width: thin;
+      scrollbar-color: #3b82f6 #dbeafe;
+    }
+
+    .carousel::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .carousel::-webkit-scrollbar-thumb {
+      background-color: #3b82f6;
       border-radius: 4px;
-      object-fit: cover;
-      box-shadow: 0 0 5px rgb(25 118 210 / 0.4);
-      border: 1px solid #1976d2;
     }
 
-    .img-1by1 {
+    .carousel-item {
+      scroll-snap-align: start;
+      min-width: 220px;
+      max-width: 220px;
+      background: #1a237e;
+      border-radius: 12px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.3);
+      color: white;
+      flex-shrink: 0;
+      user-select: none;
+      transition: transform 0.2s ease;
+    }
+
+    .carousel-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgb(0 0 0 / 0.5);
+    }
+
+    .carousel-item a {
+      color: #bbdefb;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .carousel-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Image containers for program layouts */
+    .program-image {
       width: 100%;
       aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-top: 10px;
-      box-shadow: 0 2px 5px rgb(25 118 210 / 0.3);
-      border: 1px solid #1976d2;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgb(0 0 0 / 0.3);
+      margin-bottom: 14px;
+      background: #f0f4ff;
+      cursor: default;
     }
 
-    iframe.map-embed {
+    /* Google Maps preview container */
+    .map-preview {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgb(0 0 0 / 0.4);
+      margin-bottom: 18px;
+    }
+
+    .map-preview iframe {
+      border: 0;
       width: 100%;
       height: 200px;
-      border: none;
-      border-radius: 8px;
-      margin-top: 10px;
-      box-shadow: 0 2px 5px rgb(25 118 210 / 0.3);
+      border-radius: 14px;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Button icons */
+    .icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.4));
     }
 
     /* Footer */
     footer {
       text-align: center;
-      font-size: 0.85rem;
-      color: #888;
-      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #b9d3ff;
+      margin-top: 1rem;
     }
 
     footer a {
-      color: #1976d2;
+      color: #90caf9;
       text-decoration: none;
+      font-weight: 600;
     }
 
     footer a:hover {
@@ -145,105 +301,164 @@
 </head>
 
 <body>
+  <div class="container">
+    <div class="column">
 
-  <!-- Header Avatar -->
-  <img class="avatar" src="images/avatar.png" alt="Hussein Sihat Logo / Avatar" />
-  <h1>Hussein Sihat</h1>
+      <!-- Avatar -->
+      <img class="avatar avatar--rounded" src="images/avatar.png" alt="Hussein Sihat Logo" />
 
-  <!-- Collapsible: Social Media -->
-  <button class="collapsible">Social Media</button>
-  <div class="content">
-    <a class="link-item" href="https://www.tiktok.com/@husseinsihat" target="_blank" rel="noopener noreferrer">
-      TikTok
-      <img class="link-preview" src="https://p16-va-tiktok.ibyteimg.com/obj/tos-maliva-p-0068/70e6643f0e7f42979f06d7f638b61cae_1689605834?x-expires=1692772800&amp;x-signature=9B5dZs6UvQXHl5j75DY8KUIvpF8%3D" alt="TikTok preview" />
-    </a>
-    <a class="link-item" href="https://instagram.com/husseinsihat" target="_blank" rel="noopener noreferrer">
-      Instagram
-      <img class="link-preview" src="https://instagram.fkul13-1.fna.fbcdn.net/v/t51.2885-19/123456789_123456789_123456789_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fkul13-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=abc123XYZ&_nc_tp=30&edm=ABZsPhsBAAAA&ccb=7-5&oh=123456789abcdef&oe=65123abc" alt="Instagram preview" />
-    </a>
+      <!-- Header -->
+      <h1><div>Hussein Sihat</div></h1>
+      <p>UTHM Health & Wellness Program Official Links</p>
+
+      <!-- Collapsible Sections -->
+
+      <!-- Social Media -->
+      <button class="collapsible" style="background: #69C9D0; color: #222;">Social Media</button>
+      <div class="content">
+        <div class="button-stack">
+          <a class="button button-tiktok" href="https://www.tiktok.com/@mpputhm" target="_blank" rel="noopener" role="button">
+            <img class="icon" aria-hidden="true" src="images/icons/tiktok.svg" alt="TikTok Logo" />TikTok
+          </a>
+          <a class="button button-instagram" href="https://www.instagram.com/mpputhm_official/" target="_blank" rel="noopener" role="button">
+            <img class="icon" aria-hidden="true" src="images/icons/instagram.svg" alt="Instagram Logo" />Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Pendaftaran -->
+      <button class="collapsible" style="background: #4285f4;">Pendaftaran</button>
+      <div class="content">
+        <div class="button-stack">
+          <a class="button button-googleform" href="https://forms.gle/your-google-form-link1" target="_blank" rel="noopener" role="button">
+            Google Form 1
+          </a>
+          <a class="button button-googleform" href="https://forms.gle/your-google-form-link2" target="_blank" rel="noopener" role="button">
+            Google Form 2
+          </a>
+          <a class="button button-googleform" href="https://forms.gle/your-google-form-link3" target="_blank" rel="noopener" role="button">
+            Google Form 3
+          </a>
+          <a class="button button-googleform" href="https://forms.gle/your-google-form-link4" target="_blank" rel="noopener" role="button">
+            Google Form 4
+          </a>
+          <a class="button button-googleform" href="https://forms.gle/your-google-form-link5" target="_blank" rel="noopener" role="button">
+            Google Form 5
+          </a>
+          <a class="button button-googleform" href="https://forms.gle/your-google-form-link6" target="_blank" rel="noopener" role="button">
+            Google Form 6
+          </a>
+        </div>
+      </div>
+
+      <!-- Rakan Kolaborasi -->
+      <button class="collapsible" style="background: #6f42c1;">Rakan Kolaborasi</button>
+      <div class="content">
+        <div class="carousel" aria-label="Rakan Kolaborasi Links Carousel">
+          <!-- Example Carousel Items -->
+          <div class="carousel-item">
+            <a href="https://collaborator1.com" target="_blank" rel="noopener">
+              Collaborator 1
+              <img src="images/collaborator1-preview.jpg" alt="Collaborator 1 Preview" />
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="https://collaborator2.com" target="_blank" rel="noopener">
+              Collaborator 2
+              <img src="images/collaborator2-preview.jpg" alt="Collaborator 2 Preview" />
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="https://collaborator3.com" target="_blank" rel="noopener">
+              Collaborator 3
+              <img src="images/collaborator3-preview.jpg" alt="Collaborator 3 Preview" />
+            </a>
+          </div>
+          <!-- Add more collaborators similarly -->
+        </div>
+      </div>
+
+      <!-- Video Promosi -->
+      <button class="collapsible" style="background: #EE1D52;">Video Promosi</button>
+      <div class="content">
+        <div class="button-stack">
+          <a class="button button-tiktok" href="https://www.tiktok.com/@mpputhm/video/1234567890123456789" target="_blank" rel="noopener" role="button">
+            <img class="icon" aria-hidden="true" src="images/icons/tiktok.svg" alt="TikTok Logo" />Tiktok Post
+          </a>
+          <!-- If you want to embed video preview, a simple iframe below -->
+          <!--
+          <iframe
+            width="100%"
+            height="300"
+            src="https://www.tiktok.com/embed/v2/1234567890123456789"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy"
+            style="border-radius: 14px; margin-top: 12px;"
+          ></iframe>
+          -->
+        </div>
+      </div>
+
+      <!-- Tentatif Program -->
+      <button class="collapsible" style="background: #1E88E5;">Tentatif Program</button>
+      <div class="content">
+        <img class="program-image" src="images/tentatif-program.jpg" alt="Tentatif Program" />
+      </div>
+
+      <!-- Pelan Susun Atur Program -->
+      <button class="collapsible" style="background: #0D47A1;">Pelan Susun Atur Program</button>
+      <div class="content">
+        <img class="program-image" src="images/pelan-susun-atur.jpg" alt="Pelan Susun Atur Program" />
+      </div>
+
+      <!-- Lokasi Program Hussein Sihat -->
+      <button class="collapsible" style="background: #1565C0;">Lokasi Program Hussein Sihat</button>
+      <div class="content">
+        <div class="map-preview">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokasi Program Hussein Sihat"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Lokasi Program Derma Darah -->
+      <button class="collapsible" style="background: #0D47A1;">Lokasi Program Derma Darah</button>
+      <div class="content">
+        <div class="map-preview">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokasi Program Derma Darah"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <a href="privacy.html">Privacy Policy</a> | Build your own by forking
+        <a href="https://littlelink.io" target="_blank" rel="noopener">LittleLink</a>
+      </footer>
+    </div>
   </div>
-
-  <!-- Collapsible: Pendaftaran -->
-  <button class="collapsible">Pendaftaran</button>
-  <div class="content">
-    <a class="link-item" href="https://forms.gle/example1" target="_blank" rel="noopener noreferrer">Google Form 1</a>
-    <a class="link-item" href="https://forms.gle/example2" target="_blank" rel="noopener noreferrer">Google Form 2</a>
-    <a class="link-item" href="https://forms.gle/example3" target="_blank" rel="noopener noreferrer">Google Form 3</a>
-    <a class="link-item" href="https://forms.gle/example4" target="_blank" rel="noopener noreferrer">Google Form 4</a>
-    <a class="link-item" href="https://forms.gle/example5" target="_blank" rel="noopener noreferrer">Google Form 5</a>
-    <a class="link-item" href="https://forms.gle/example6" target="_blank" rel="noopener noreferrer">Google Form 6</a>
-  </div>
-
-  <!-- Collapsible: Rakan Kolaborasi -->
-  <button class="collapsible">Rakan Kolaborasi</button>
-  <div class="content">
-    <a class="link-item" href="https://partner1.example.com" target="_blank" rel="noopener noreferrer">
-      Partner 1
-      <img class="link-preview" src="https://partner1.example.com/preview.jpg" alt="Partner 1 preview" />
-    </a>
-    <a class="link-item" href="https://partner2.example.com" target="_blank" rel="noopener noreferrer">
-      Partner 2
-      <img class="link-preview" src="https://partner2.example.com/preview.jpg" alt="Partner 2 preview" />
-    </a>
-  </div>
-
-  <!-- Collapsible: Video Promosi -->
-  <button class="collapsible">Video Promosi</button>
-  <div class="content">
-    <a class="link-item" href="https://www.tiktok.com/@husseinsihat/video/1234567890123456789" target="_blank" rel="noopener noreferrer">
-      TikTok Post
-      <img class="link-preview" src="https://p16-va-tiktok.ibyteimg.com/obj/tos-maliva-p-0068/70e6643f0e7f42979f06d7f638b61cae_1689605834?x-expires=1692772800&amp;x-signature=9B5dZs6UvQXHl5j75DY8KUIvpF8%3D" alt="TikTok video preview" />
-    </a>
-  </div>
-
-  <!-- Collapsible: Tentatif Program -->
-  <button class="collapsible">Tentatif Program</button>
-  <div class="content">
-    <img class="img-1by1" src="images/tentatif-program.jpg" alt="Tentatif Program" />
-  </div>
-
-  <!-- Collapsible: Pelan Susun Atur Program -->
-  <button class="collapsible">Pelan Susun Atur Program</button>
-  <div class="content">
-    <img class="img-1by1" src="images/pelan-susun-atur.jpg" alt="Pelan Susun Atur Program" />
-  </div>
-
-  <!-- Collapsible: Lokasi Program Hussein Sihat -->
-  <button class="collapsible">Lokasi Program Hussein Sihat</button>
-  <div class="content">
-    <iframe
-      class="map-embed"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.845301620182!2d101.931702314754!3d2.893370956965437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdcb8e7cfe0207%3A0xf8ad35e8c7bd4a66!2sUTHM!5e0!3m2!1sen!2smy!4v1687862600732!5m2!1sen!2smy"
-      allowfullscreen
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-
-  <!-- Collapsible: Lokasi Program Derma Darah -->
-  <button class="collapsible">Lokasi Program Derma Darah</button>
-  <div class="content">
-    <iframe
-      class="map-embed"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.845301620182!2d101.931702314754!3d2.893370956965437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdcb8e7cfe0207%3A0xf8ad35e8c7bd4a66!2sUTHM!5e0!3m2!1sen!2smy!4v1687862600732!5m2!1sen!2smy"
-      allowfullscreen
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-
-  <footer>
-    &copy; 2025 Hussein Sihat | Built with LittleLink
-  </footer>
 
   <script>
     // Collapsible functionality
-    document.querySelectorAll(".collapsible").forEach((button) => {
-      button.addEventListener("click", () => {
-        button.classList.toggle("active");
-        const content = button.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
         } else {
-          content.style.display = "block";
+          content.style.maxHeight = content.scrollHeight + "px";
         }
       });
     });
