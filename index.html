@@ -194,53 +194,54 @@
     }
 
     /* Carousel container */
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 12px;
-      padding: 8px 0;
-      scrollbar-width: thin;
-      scrollbar-color: #3b82f6 #dbeafe;
-    }
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 12px;
+  padding: 8px 0;
+  scrollbar-width: thin;
+  scrollbar-color: #3b82f6 #dbeafe;
+}
 
-    .carousel::-webkit-scrollbar {
-      height: 8px;
-    }
+.carousel::-webkit-scrollbar {
+  height: 8px;
+}
 
-    .carousel::-webkit-scrollbar-thumb {
-      background-color: #3b82f6;
-      border-radius: 4px;
-    }
+.carousel::-webkit-scrollbar-thumb {
+  background-color: #3b82f6;
+  border-radius: 4px;
+}
 
-    .carousel-item {
-      scroll-snap-align: start;
-      min-width: 220px;
-      max-width: 220px;
-      background: #1a237e;
-      border-radius: 12px;
-      padding: 14px 16px;
-      box-shadow: 0 4px 10px rgb(0 0 0 / 0.3);
-      color: white;
-      flex-shrink: 0;
-      user-select: none;
-      transition: transform 0.2s ease;
-    }
+.carousel-item {
+  scroll-snap-align: start;
+  min-width: 180px; /* Adjust as needed */
+  max-width: 180px;
+  background: #1a237e;
+  border-radius: 12px;
+  padding: 12px 10px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.3);
+  color: white;
+  flex-shrink: 0;
+  user-select: none;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
 
-    .carousel-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 16px rgb(0 0 0 / 0.5);
-    }
+.carousel-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgb(0 0 0 / 0.5);
+}
 
-    .carousel-item a {
-      color: #bbdefb;
-      font-weight: 700;
-      text-decoration: none;
-    }
+.carousel-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 8px auto 0 auto;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+}
 
-    .carousel-item a:hover {
-      text-decoration: underline;
-    }
 
     /* Image containers for program layouts */
     .program-image {
@@ -326,79 +327,160 @@
         </div>
       </div>
 
-      <!-- Pendaftaran -->
-      <button class="collapsible" style="background: #4285f4;">Pendaftaran</button>
-      <div class="content">
-        <div class="button-stack">
-          <a class="button button-googleform" href="https://forms.gle/your-google-form-link1" target="_blank" rel="noopener" role="button">
-            Google Form 1
-          </a>
-          <a class="button button-googleform" href="https://forms.gle/your-google-form-link2" target="_blank" rel="noopener" role="button">
-            Google Form 2
-          </a>
-          <a class="button button-googleform" href="https://forms.gle/your-google-form-link3" target="_blank" rel="noopener" role="button">
-            Google Form 3
-          </a>
-          <a class="button button-googleform" href="https://forms.gle/your-google-form-link4" target="_blank" rel="noopener" role="button">
-            Google Form 4
-          </a>
-          <a class="button button-googleform" href="https://forms.gle/your-google-form-link5" target="_blank" rel="noopener" role="button">
-            Google Form 5
-          </a>
-          <a class="button button-googleform" href="https://forms.gle/your-google-form-link6" target="_blank" rel="noopener" role="button">
-            Google Form 6
-          </a>
-        </div>
-      </div>
+<!-- Pendaftaran -->
+<button class="collapsible" style="background: #4285f4;">Pendaftaran</button>
+<div class="content">
+  <div class="button-stack">
+    <a class="button button-googleform" href="https://forms.gle/UrjEeijtuYF2K2mz5" target="_blank" rel="noopener" role="button">
+      Forum 1
+    </a>
+    <a class="button button-googleform" href="https://forms.gle/VpDriyCfSREqEuBd7" target="_blank" rel="noopener" role="button">
+      Forum 2
+    </a>
+    <a class="button button-googleform" href="https://forms.gle/aRQD4xwSnib4KomPA" target="_blank" rel="noopener" role="button">
+      Forum 3 (AADK)
+    </a>
+    <a class="button button-googleform" href="https://forms.gle/KAMzW5Z4GVQZVzxa8" target="_blank" rel="noopener" role="button">
+      Pendaftaran Derma Darah
+    </a>
+    <a class="button button-googleform" href="https://forms.gle/jgMnqKSp9ijxq3FF7" target="_blank" rel="noopener" role="button">
+      Pendaftaran Pelajar Sekolah
+    </a>
+    <a class="button button-googleform" href="https://forms.gle/1RBZpSWAx9HdCQM46" target="_blank" rel="noopener" role="button">
+      Penerima Bantuan Kebajikan
+    </a>
+  </div>
+</div>
 
-      <!-- Rakan Kolaborasi -->
-      <button class="collapsible" style="background: #6f42c1;">Rakan Kolaborasi</button>
-      <div class="content">
-        <div class="carousel" aria-label="Rakan Kolaborasi Links Carousel">
-          <!-- Example Carousel Items -->
-          <div class="carousel-item">
-            <a href="https://collaborator1.com" target="_blank" rel="noopener">
-              Collaborator 1
-              <img src="images/collaborator1-preview.jpg" alt="Collaborator 1 Preview" />
-            </a>
-          </div>
-          <div class="carousel-item">
-            <a href="https://collaborator2.com" target="_blank" rel="noopener">
-              Collaborator 2
-              <img src="images/collaborator2-preview.jpg" alt="Collaborator 2 Preview" />
-            </a>
-          </div>
-          <div class="carousel-item">
-            <a href="https://collaborator3.com" target="_blank" rel="noopener">
-              Collaborator 3
-              <img src="images/collaborator3-preview.jpg" alt="Collaborator 3 Preview" />
-            </a>
-          </div>
-          <!-- Add more collaborators similarly -->
-        </div>
-      </div>
 
-      <!-- Video Promosi -->
-      <button class="collapsible" style="background: #EE1D52;">Video Promosi</button>
-      <div class="content">
-        <div class="button-stack">
-          <a class="button button-tiktok" href="https://www.tiktok.com/@mpputhm/video/1234567890123456789" target="_blank" rel="noopener" role="button">
-            <img class="icon" aria-hidden="true" src="images/icons/tiktok.svg" alt="TikTok Logo" />Tiktok Post
-          </a>
-          <!-- If you want to embed video preview, a simple iframe below -->
-          <!--
-          <iframe
-            width="100%"
-            height="300"
-            src="https://www.tiktok.com/embed/v2/1234567890123456789"
-            frameborder="0"
-            allowfullscreen
-            loading="lazy"
-            style="border-radius: 14px; margin-top: 12px;"
-          ></iframe>
-          -->
-        </div>
-      </div>
+<!-- Rakan Kolaborasi -->
+<button class="collapsible" style="background: #6f42c1;">Rakan Kolaborasi</button>
+<div class="content">
+  <div class="carousel" aria-label="Rakan Kolaborasi Links Carousel">
+
+    <div class="carousel-item">
+      <a href="https://www.instagram.com/kementeriankesihatanmalaysia/?hl=en" target="_blank" rel="noopener">
+        Kementerian Kesihatan Malaysia
+        <img
+          src="https://instagram.fkul12-1.fna.fbcdn.net/v/t51.2885-19/301376200_1161402178480515_1690435804480063066_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fkul12-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=PbB8V3JHpaYAX9wTt-c&edm=AP_V10EBAAAA&ccb=7-5&oh=2436d9c07a3321e1d8cddf74ebadbf3b&oe=647E15A5&_nc_sid=4f375e"
+          alt="Kementerian Kesihatan Malaysia Profile Picture" />
+      </a>
+    </div>
+
+    <div class="carousel-item">
+      <a href="https://www.rhbgroup.com/overview/islamic/index.html" target="_blank" rel="noopener">
+        RHB Group Islamic
+        <img src="https://www.rhbgroup.com/images/rhb-logo.svg" alt="RHB Group Logo" style="width: 100px; border-radius: 12px; margin-top: 8px;" />
+      </a>
+    </div>
+
+    <div class="carousel-item">
+      <a href="https://myc.my/" target="_blank" rel="noopener">
+        Malaysian Youth Council
+        <img
+          src="https://myc.my/assets/images/myc-logo.png"
+          alt="MYC Logo"
+          style="width: 100px; border-radius: 12px; margin-top: 8px;"
+        />
+      </a>
+    </div>
+
+    <div class="carousel-item">
+      <a href="https://www.instagram.com/kpjbatupahat/?hl=en" target="_blank" rel="noopener">
+        KPJ Batu Pahat
+        <img
+          src="https://instagram.fkul12-1.fna.fbcdn.net/v/t51.2885-19/299604393_1224770922250587_4111101180708702954_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fkul12-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=FXj3fF3yNKwAX8ShD6Z&edm=AP_V10EBAAAA&ccb=7-5&oh=5ea27be98f47e0185e1e8631d5482a2e&oe=648F29ED&_nc_sid=4f375e"
+          alt="KPJ Batu Pahat Profile Picture" />
+      </a>
+    </div>
+
+    <div class="carousel-item">
+      <a href="https://www.instagram.com/kelabpemadamuthm_/?hl=en" target="_blank" rel="noopener">
+        Kelab Pemadam UTHM
+        <img
+          src="https://instagram.fkul12-1.fna.fbcdn.net/v/t51.2885-19/299707823_580120508922916_4036952858357920744_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fkul12-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=U6smSHHX2PUAX9dKUI7&edm=AP_V10EBAAAA&ccb=7-5&oh=09991c4250e99100c6a3e0efb7351e42&oe=6493E5F4&_nc_sid=4f375e"
+          alt="Kelab Pemadam UTHM Profile Picture" />
+      </a>
+    </div>
+
+    <div class="carousel-item">
+      <a href="https://www.instagram.com/persatuanpelajarmekanikal/?hl=en" target="_blank" rel="noopener">
+        Persatuan Pelajar Mekanikal
+        <img
+          src="https://instagram.fkul12-1.fna.fbcdn.net/v/t51.2885-19/301418190_672707242970691_3465672242893201152_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fkul12-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=mG6fyjG7KvgAX9QilQH&edm=AP_V10EBAAAA&ccb=7-5&oh=4d5c5f44fca0a574d0a67e3d5e860a1e&oe=6490922B&_nc_sid=4f375e"
+          alt="Persatuan Pelajar Mekanikal Profile Picture" />
+      </a>
+    </div>
+
+    <div class="carousel-item">
+      <a href="https://www.facebook.com/pusatkesihatan.uthm/" target="_blank" rel="noopener">
+        Pusat Kesihatan UTHM
+        <img
+          src="https://scontent.fkul12-1.fna.fbcdn.net/v/t39.30808-6/299875789_3052081201511183_8450701321774343697_n.jpg?_nc_cat=110&_nc_ohc=QwwrlDhzPz4AX_B8rAv&_nc_ht=scontent.fkul12-1.fna&oh=09fa18a223b6e7c1e8510e82b7791e69&oe=64929F4E"
+          alt="Pusat Kesihatan UTHM Profile Picture" style="border-radius: 50%; width: 100px; margin-top: 8px;" />
+      </a>
+    </div>
+
+    <div class="carousel-item">
+      <a href="https://www.facebook.com/wakafendowmenuthm/" target="_blank" rel="noopener">
+        Wakaf Endowment UTHM
+        <img
+          src="https://scontent.fkul12-1.fna.fbcdn.net/v/t39.30808-6/294506308_1191269708967567_2589551328699151370_n.jpg?_nc_cat=109&_nc_ohc=Q8zX5lA_1yIAX8D6GCG&_nc_ht=scontent.fkul12-1.fna&oh=53c5a22f5b5ce6c75f2a09e0a08b819e&oe=6492CFD4"
+          alt="Wakaf Endowment UTHM Profile Picture" style="border-radius: 50%; width: 100px; margin-top: 8px;" />
+      </a>
+    </div>
+
+    <div class="carousel-item">
+      <a href="https://www.instagram.com/aadkbatupahat/" target="_blank" rel="noopener">
+        AADK Batu Pahat
+        <img
+          src="https://instagram.fkul12-1.fna.fbcdn.net/v/t51.2885-19/297146295_435274796056989_7397487089886250842_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fkul12-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=wRPjFv_03e8AX8KHckM&edm=AP_V10EBAAAA&ccb=7-5&oh=4ad3f092fa4f360f754537d7f0a25627&oe=6492BC98&_nc_sid=4f375e"
+          alt="AADK Batu Pahat Profile Picture" />
+      </a>
+    </div>
+
+    <div class="carousel-item">
+      <a href="https://www.instagram.com/pantaihospitalbatupahat/?hl=en" target="_blank" rel="noopener">
+        Pantai Hospital Batu Pahat
+        <img
+          src="https://instagram.fkul12-1.fna.fbcdn.net/v/t51.2885-19/295267496_585561750290729_4253433675827918131_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fkul12-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=cr26PfP7kFcAX8VVdzp&edm=AP_V10EBAAAA&ccb=7-5&oh=81db9a14ea05637f99d282e6f2bcfb0c&oe=649310A9&_nc_sid=4f375e"
+          alt="Pantai Hospital Batu Pahat Profile Picture" />
+      </a>
+    </div>
+
+    <div class="carousel-item">
+      <a href="https://www.instagram.com/itcfsktm/?hl=en" target="_blank" rel="noopener">
+        ITC FSKTM
+        <img
+          src="https://instagram.fkul12-1.fna.fbcdn.net/v/t51.2885-19/293237107_484617936709435_2773223558877206683_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fkul12-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=j5bW8wL7h50AX_UaG9r&edm=AP_V10EBAAAA&ccb=7-5&oh=328772dd0ec1a990a46aaed6cde7c582&oe=6492E0F7&_nc_sid=4f375e"
+          alt="ITC FSKTM Profile Picture" />
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Video Promosi -->
+<button class="collapsible" style="background: #EE1D52;">Video Promosi</button>
+<div class="content">
+  <div class="button-stack">
+    <a class="button button-tiktok" href="https://www.tiktok.com/@mpputhm/video/7513590146143423786" target="_blank" rel="noopener" role="button">
+      <img class="icon" aria-hidden="true" src="images/icons/tiktok.svg" alt="TikTok Logo" />Tiktok Post
+    </a>
+    <iframe
+      width="100%"
+      height="400"
+      src="https://www.tiktok.com/embed/7513590146143423786"
+      frameborder="0"
+      allowfullscreen
+      loading="lazy"
+      style="border-radius: 14px; margin-top: 12px;"
+      title="TikTok Video Embed"
+    ></iframe>
+  </div>
+</div>
+
 
       <!-- Tentatif Program -->
       <button class="collapsible" style="background: #1E88E5;">Tentatif Program</button>
@@ -412,33 +494,36 @@
         <img class="program-image" src="images/pelan-susun-atur.jpg" alt="Pelan Susun Atur Program" />
       </div>
 
-      <!-- Lokasi Program Hussein Sihat -->
-      <button class="collapsible" style="background: #1565C0;">Lokasi Program Hussein Sihat</button>
-      <div class="content">
-        <div class="map-preview">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Lokasi Program Hussein Sihat"
-          ></iframe>
-        </div>
-      </div>
+<!-- Lokasi Program Hussein Sihat -->
+<button class="collapsible" style="background: #1565C0;">Lokasi Program Hussein Sihat</button>
+<div class="content">
+  <div class="map-preview">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.939382541658!2d102.78822741474456!3d1.8553094613124325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b71c3d3db6d8e3%3A0xa91349989cbd849!2sPusat%20Sukan%20dan%20Kebudayaan%20UTHM!5e0!3m2!1sen!2smy!4v1686973200000!5m2!1sen!2smy"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Lokasi Program Hussein Sihat"
+      style="border:0; width: 100%; height: 250px; border-radius: 14px;"
+    ></iframe>
+  </div>
+</div>
 
-      <!-- Lokasi Program Derma Darah -->
-      <button class="collapsible" style="background: #0D47A1;">Lokasi Program Derma Darah</button>
-      <div class="content">
-        <div class="map-preview">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Lokasi Program Derma Darah"
-          ></iframe>
-        </div>
-      </div>
+<!-- Lokasi Program Derma Darah -->
+<button class="collapsible" style="background: #0D47A1;">Lokasi Program Derma Darah</button>
+<div class="content">
+  <div class="map-preview">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.918321707403!2d102.78438041474438!3d1.8583007612911866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b71c3121a522b9%3A0x3d5d1f48ed0a4cde!2sDewan%20Serbaguna%20UTHM!5e0!3m2!1sen!2smy!4v1686973300000!5m2!1sen!2smy"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Lokasi Program Derma Darah"
+      style="border:0; width: 100%; height: 250px; border-radius: 14px;"
+    ></iframe>
+  </div>
+</div>
+
 
       <!-- Footer -->
       <footer>
